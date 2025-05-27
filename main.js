@@ -1,19 +1,20 @@
 require('dotenv').config(); 
 
 const express = require('express');
-const connectDB = require('./db/connectToDb'); 
+const connectToDb = require('./db/connectToDb'); 
 const bookRoutes = require('./routes/bookRoutes'); 
 
 const app = express();
 
-
+connectToDb()
 app.use(express.json());
 
 
 app.use('/api/books', bookRoutes);
 
 
-connectDB();
+
+ 
 
 
 
